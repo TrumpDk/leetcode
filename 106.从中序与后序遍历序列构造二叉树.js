@@ -19,7 +19,13 @@
  * @return {TreeNode}
  */
 var buildTree = function(inorder, postorder) {
-
+    if (inorder.length === 0) return null;
+    const head = postorder[inorder.length - 1];
+    const index = inorder.indexOf(head);
+    let node = new TreeNode(head);
+    node.left = buildTree(inorder.slice(0, index), postorder.slice(0, index));
+    node.right = buildTree(inorder.slice(index + 1), postorder.slice(index, postorder.length - 1))
+    return node;
 };
 // @lc code=end
 
