@@ -19,7 +19,7 @@
  */
 
 // BFS方式我认为并不是真正的反向便利方式
-// 这道题应该参考二叉树的后序遍历 采用 DFS来做更为合适
+// 后序遍历不能解决这个问题 得改一下模式
 var levelOrderBottom = function(root) {
         const ret = [];
     
